@@ -29,7 +29,7 @@ namespace Updog
                 }
             },
             {
-                new ColorCombination(Colors.red, Colors.blue),
+                new ColorCombination(Colors.blue, Colors.red),
                 new string[]
                 {
                     "x  xx",
@@ -40,7 +40,7 @@ namespace Updog
                 }
             },
             {
-                new ColorCombination(Colors.red, Colors.green),
+                new ColorCombination(Colors.green, Colors.red),
                 new string[]
                 {
                     "    x",
@@ -51,7 +51,7 @@ namespace Updog
                 }
             },
             {
-                new ColorCombination(Colors.blue, Colors.red),
+                new ColorCombination(Colors.red, Colors.blue),
                 new string[]
                 {
                     "x x  ",
@@ -73,7 +73,7 @@ namespace Updog
                 }
             },
             {
-                new ColorCombination(Colors.blue, Colors.green),
+                new ColorCombination(Colors.green, Colors.blue),
                 new string[]
                 {
                     "x    ",
@@ -84,7 +84,7 @@ namespace Updog
                 }
             },
             {
-                new ColorCombination(Colors.green, Colors.red),
+                new ColorCombination(Colors.red, Colors.green),
                 new string[]
                 {
                     "     ",
@@ -95,7 +95,7 @@ namespace Updog
                 }
             },
             {
-                new ColorCombination(Colors.green, Colors.blue),
+                new ColorCombination(Colors.blue, Colors.green),
                 new string[]
                 {
                     "  x  ",
