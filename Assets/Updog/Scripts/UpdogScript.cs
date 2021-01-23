@@ -1,7 +1,6 @@
 ﻿using EmikBaseModules;
 using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using Updog;
 using IntTuple = EmikBaseModules.Tuple<int, int>;
@@ -44,15 +43,14 @@ public class UpdogScript : ModuleScript
         {
             var colors = Colors.GetFinal;
             var word = Words.GetRandom;
-            var flash = new IEnum<Color[], string>(Flash, this);
-            flash.StartCoroutine(colors, word.Key);
+            new IEnum<Color[], string>(Flash, this).StartCoroutine(colors, word.Key);
             var maze = Mazes.Get(word.Value, colors[2], colors[4]);
 
-            _position = _initialPosition = Mazes.Get(word.Value, colors[2], colors[4]).Find(colors[0]);
+            _position = _initialPosition = maze.Find(colors[0]);
             _order = Words.GetOrder(colors[6], word.Value.Item2);
             _initialMaze = maze.InsertBones();
-            _maze = new String[_initialMaze.Length];
 
+            _maze = new String[_initialMaze.Length];
             _initialMaze.Copy(_maze);
 
             _order.ToLog(this);

@@ -15,220 +15,232 @@ namespace Updog
     {
         internal const int MaxLength = 11;
 
-        private static readonly ColorDictionary _bones = new ColorDictionary
+        private static ColorDictionary Bones
         {
+            get
             {
-                new ColorCombination(Colors.red, Colors.red),
-                new string[]
+                return new ColorDictionary
                 {
-                    "     ",
-                    "x    ",
-                    "   x ",
-                    "  x  ",
-                    "x   x"
-                }
-            },
-            {
-                new ColorCombination(Colors.blue, Colors.red),
-                new string[]
-                {
-                    "x  xx",
-                    "    x",
-                    " x   ",
-                    "     ",
-                    "     "
-                }
-            },
-            {
-                new ColorCombination(Colors.green, Colors.red),
-                new string[]
-                {
-                    "    x",
-                    "    x",
-                    " x   ",
-                    "    x",
-                    " x   "
-                }
-            },
-            {
-                new ColorCombination(Colors.red, Colors.blue),
-                new string[]
-                {
-                    "x x  ",
-                    "   xx",
-                    " x   ",
-                    "     ",
-                    "     "
-                }
-            },
-            {
-                new ColorCombination(Colors.blue, Colors.blue),
-                new string[]
-                {
-                    "     ",
-                    " x   ",
-                    "     ",
-                    "x x x",
-                    "x    "
-                }
-            },
-            {
-                new ColorCombination(Colors.green, Colors.blue),
-                new string[]
-                {
-                    "x    ",
-                    "     ",
-                    "x x  ",
-                    "     ",
-                    " x x "
-                }
-            },
-            {
-                new ColorCombination(Colors.red, Colors.green),
-                new string[]
-                {
-                    "     ",
-                    "xx   ",
-                    " x   ",
-                    "x x  ",
-                    "     "
-                }
-            },
-            {
-                new ColorCombination(Colors.blue, Colors.green),
-                new string[]
-                {
-                    "  x  ",
-                    "  x  ",
-                    " x  x",
-                    "     ",
-                    "  x  "
-                }
-            },
-            {
-                new ColorCombination(Colors.green, Colors.green),
-                new string[]
-                {
-                    " x   ",
-                    "xx x ",
-                    "     ",
-                    "  x  ",
-                    "     "
-                }
+                    {
+                        new ColorCombination(Colors.red, Colors.red),
+                        new string[]
+                        {
+                            "     ",
+                            "x    ",
+                            "   x ",
+                            "  x  ",
+                            "x   x"
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.blue, Colors.red),
+                        new string[]
+                        {
+                            "x  xx",
+                            "    x",
+                            " x   ",
+                            "     ",
+                            "     "
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.green, Colors.red),
+                        new string[]
+                        {
+                            "    x",
+                            "    x",
+                            " x   ",
+                            "    x",
+                            " x   "
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.red, Colors.blue),
+                        new string[]
+                        {
+                            "x x  ",
+                            "   xx",
+                            " x   ",
+                            "     ",
+                            "     "
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.blue, Colors.blue),
+                        new string[]
+                        {
+                            "     ",
+                            " x   ",
+                            "     ",
+                            "x x x",
+                            "x    "
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.green, Colors.blue),
+                        new string[]
+                        {
+                            "x    ",
+                            "     ",
+                            "x x  ",
+                            "     ",
+                            " x x "
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.red, Colors.green),
+                        new string[]
+                        {
+                            "     ",
+                            "xx   ",
+                            " x   ",
+                            "x x  ",
+                            "     "
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.blue, Colors.green),
+                        new string[]
+                        {
+                            "  x  ",
+                            "  x  ",
+                            " x  x",
+                            "     ",
+                            "  x  "
+                        }
+                    },
+                    {
+                        new ColorCombination(Colors.green, Colors.green),
+                        new string[]
+                        {
+                            " x   ",
+                            "xx x ",
+                            "     ",
+                            "  x  ",
+                            "     "
+                        }
+                    }
+                };
             }
-        };
+        }
 
-        private static readonly Dictionary<Spelling, String[]> _walls = new Dictionary<Spelling, String[]>
+        private static Dictionary<Spelling, String[]> Walls
         {
+            get 
             {
-                Spelling.Dog,
-                new String[]
+                return new Dictionary<Spelling, String[]>
                 {
-                    new String("+---------+"),
-                    new String("|R        |"),
-                    new String("| + + + + |"),
-                    new String("| |    Y| |"),
-                    new String("| + + + + |"),
-                    new String("|O|  G  |B|"),
-                    new String("| + + + + |"),
-                    new String("| |     | |"),
-                    new String("| + + + + |"),
-                    new String("|P        |"),
-                    new String("+---------+")
-                }
-            },
-            {
-                Spelling.Dawg,
-                new String[]
-                {
-                    new String("+---------+"),
-                    new String("|        B|"),
-                    new String("| + + + + |"),
-                    new String("|  R| |Y  |"),
-                    new String("| +-+ +-+ |"),
-                    new String("|         |"),
-                    new String("| +-+ +-+ |"),
-                    new String("|  O| |G  |"),
-                    new String("| + + + + |"),
-                    new String("|P        |"),
-                    new String("+---------+")
-                }
-            },
-            {
-                Spelling.Doge,
-                new String[]
-                {
-                    new String("+---------+"),
-                    new String("|R       B|"),
-                    new String("+-+ + + +-+"),
-                    new String("|         |"),
-                    new String("| + + + + |"),
-                    new String("|   |O|G  |"),
-                    new String("| + + + + |"),
-                    new String("|         |"),
-                    new String("+-+ + + +-+"),
-                    new String("|P       Y|"),
-                    new String("+---------+")
-                }
-            },
-            {
-                Spelling.Dag,
-                new String[]
-                {
-                    new String("+---+-+---+"),
-                    new String("|G  |R|  B|"),
-                    new String("+-+ + + + |"),
-                    new String("|O|       |"),
-                    new String("| +-+ + +-+"),
-                    new String("|   |    Y|"),
-                    new String("| + +-+ +-+"),
-                    new String("|     |   |"),
-                    new String("+-+ + +-+ |"),
-                    new String("|P        |"),
-                    new String("+---------+")
-                }
-            },
-            {
-                Spelling.Dogg,
-                new String[]
-                {
-                    new String("+---------+"),
-                    new String("|R        |"),
-                    new String("+-+-+-+-+ |"),
-                    new String("|Y  |     |"),
-                    new String("| + + + +-+"),
-                    new String("|    O    |"),
-                    new String("+-+ +-+ + |"),
-                    new String("|       |B|"),
-                    new String("| +-+-+-+-+"),
-                    new String("|G       P|"),
-                    new String("+---------+")
-                }
-            },
-            {
-                Spelling.Dage,
-                new String[]
-                {
-                    new String("+-----+---+"),
-                    new String("|     |R  |"),
-                    new String("+-+-+ +-+ |"),
-                    new String("|  Y|     |"),
-                    new String("| +-+ + + |"),
-                    new String("|     |O| |"),
-                    new String("+-+-+ +-+-+"),
-                    new String("|  G|    B|"),
-                    new String("| +-+ +-+-+"),
-                    new String("|        P|"),
-                    new String("+---------+")
-                }
+                    {
+                        Spelling.Dog,
+                        new String[]
+                        {
+                            new String("+---------+"),
+                            new String("|R        |"),
+                            new String("| + + + + |"),
+                            new String("| |    Y| |"),
+                            new String("| + + + + |"),
+                            new String("|O|  G  |B|"),
+                            new String("| + + + + |"),
+                            new String("| |     | |"),
+                            new String("| + + + + |"),
+                            new String("|P        |"),
+                            new String("+---------+")
+                        }
+                    },
+                    {
+                        Spelling.Dawg,
+                        new String[]
+                        {
+                            new String("+---------+"),
+                            new String("|        B|"),
+                            new String("| + + + + |"),
+                            new String("|  R| |Y  |"),
+                            new String("| +-+ +-+ |"),
+                            new String("|         |"),
+                            new String("| +-+ +-+ |"),
+                            new String("|  O| |G  |"),
+                            new String("| + + + + |"),
+                            new String("|P        |"),
+                            new String("+---------+")
+                        }
+                    },
+                    {
+                        Spelling.Doge,
+                        new String[]
+                        {
+                            new String("+---------+"),
+                            new String("|R       B|"),
+                            new String("+-+ + + +-+"),
+                            new String("|         |"),
+                            new String("| + + + + |"),
+                            new String("|   |O|G  |"),
+                            new String("| + + + + |"),
+                            new String("|         |"),
+                            new String("+-+ + + +-+"),
+                            new String("|P       Y|"),
+                            new String("+---------+")
+                        }
+                    },
+                    {
+                        Spelling.Dag,
+                        new String[]
+                        {
+                            new String("+---+-+---+"),
+                            new String("|G  |R|  B|"),
+                            new String("+-+ + + + |"),
+                            new String("|O|       |"),
+                            new String("| +-+ + +-+"),
+                            new String("|   |    Y|"),
+                            new String("| + +-+ +-+"),
+                            new String("|     |   |"),
+                            new String("+-+ + +-+ |"),
+                            new String("|P        |"),
+                            new String("+---------+")
+                        }
+                    },
+                    {
+                        Spelling.Dogg,
+                        new String[]
+                        {
+                            new String("+---------+"),
+                            new String("|R        |"),
+                            new String("+-+-+-+-+ |"),
+                            new String("|Y  |     |"),
+                            new String("| + + + +-+"),
+                            new String("|    O    |"),
+                            new String("+-+ +-+ + |"),
+                            new String("|       |B|"),
+                            new String("| +-+-+-+-+"),
+                            new String("|G       P|"),
+                            new String("+---------+")
+                        }
+                    },
+                    {
+                        Spelling.Dage,
+                        new String[]
+                        {
+                            new String("+-----+---+"),
+                            new String("|     |R  |"),
+                            new String("+-+-+ +-+ |"),
+                            new String("|  Y|     |"),
+                            new String("| +-+ + + |"),
+                            new String("|     |O| |"),
+                            new String("+-+-+ +-+-+"),
+                            new String("|  G|    B|"),
+                            new String("| +-+ +-+-+"),
+                            new String("|        P|"),
+                            new String("+---------+")
+                        }
+                    }
+                };
             }
-        };
+        }
 
         internal static MazeTuple Get(WordTuple word, Color colorA, Color colorB)
         {
             return new MazeTuple(
-                _walls[word.Item1],
-                _bones[new ColorCombination(colorA, colorB)]);
+                Walls[word.Item1],
+                Bones[new ColorCombination(colorA, colorB)]);
         }
 
         internal static IntTuple Find(this MazeTuple maze, Color color)
