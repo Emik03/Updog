@@ -33,8 +33,8 @@ namespace Updog
             switch (Colors.GetAll[color])
             {
                 case Colors.Red: return "XXXX".AsOrder(casing);
-                case Colors.Orange: return "XXX ".AsOrder(casing);
-                case Colors.Yellow: return "XX X".AsOrder(casing);
+                case Colors.Orange: return "XX X".AsOrder(casing);
+                case Colors.Yellow: return "XXX ".AsOrder(casing);
                 case Colors.Green: return "XX  ".AsOrder(casing);
                 case Colors.Blue: return "X XX".AsOrder(casing);
                 case Colors.Purple: return "X  X".AsOrder(casing);
