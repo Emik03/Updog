@@ -12,7 +12,7 @@ public class UpdogTPScript : TPScript
     private bool _isWait;
 
 #pragma warning disable 414
-    internal override string TwitchHelpMessage { get { return @"!{0} colorblind - !{0} <??> <??>... (Take Bone: BB - Normal: NL, ND, NU, NR - Dog: DL, DD, DU, DR)"; } }
+    new private const string TwitchHelpMessage = @"!{0} colorblind - !{0} <??> <??>... (Take Bone: BB - Normal: NL, ND, NU, NR - Dog: DL, DD, DU, DR)";
 #pragma warning restore 414
 
     internal override IEnumerator ProcessTwitchCommand(string command)

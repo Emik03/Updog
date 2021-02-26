@@ -20,6 +20,6 @@ MonoBehaviour:
     Updog\n\nHTML Manual: HTML Manual: https://ktane.timwi.de/HTML/Updog.html\n\nTwitch
     Plays is supported.\r\n\r\nDo you want to file a bug report? Do you have a question
     about the module? Contact me on Discord: @Emik#0001"
-  version: 1.0.4
+  version: 1.0.5
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 330c5bb56a3551b458b8f998fa5a9d52, type: 3}

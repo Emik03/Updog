@@ -21,6 +21,6 @@ namespace EmikBaseModules
         /// <summary>
         /// A help message that can be performed with !{#} help where # is the module id.
         /// </summary>
-        internal abstract string TwitchHelpMessage { get; }
+        internal virtual string TwitchHelpMessage { get; }
     }
 }
